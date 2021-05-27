@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ADVENTOURSWITHAISHA-home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Xanh+Mono|Redressed|Pompiere">
+    <script src="main.js"></script>
+    <style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        background-image: linear-gradient(to bottom right, rgba(230, 235, 240, 0.856), white);
+        font-family: Pompiere;
+    }
+    header {
+        position: relative;
+        background: url("images/background-image-aisha.jpg") no-repeat center scroll;
+        background-size: cover;
+        filter: grayscale(20%);
+        filter: contrast(90%);
+        width: 100%;
+        height: 650px;
+        text-align: center;
+    }
+    div.head {
+        position: absolute;
+        color: white;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation-name: slide-in;
+        animation-duration: 2s;
+        animation-fill-mode: both;
+        animation-timing-function: ease-in-out;
+    }
+    @keyframes slide-in {
+        from {top: -200px;}
+        to {top: 40%;}
+    }
+    div.head h2 {
+        font-size: 50px;
+        padding-bottom: 40px;
+        opacity: 1;
+    }
+    p.text {
+        line-height: 40px;
+        font-size: 25px;
+        font-weight: none;
+        opacity: 1;
+    }
+    div.head a {
+        margin-left: -10%;
+        display: inline-block;
+        background-color: #555;
+        padding: 10px;
+        text-align: center;
+        border-radius: 7px;
+        border: 1px solid #ddd;
+        outline: none;
+        text-decoration: none;
+        color: #ddd;
+        width: auto;
+        opacity: 1;
+        animation: bloglink 5s ease-in-out 3s infinite alternate both;
+    }
+    @keyframes bloglink {
+        0% {background-color: #555;}
+        20% {background-color: cadetblue;}
+        40% {background-color: chocolate;}
+        60% {background-color: cornflowerblue;}
+        80% {background-color: darkslategray;}
+        100% {background-color: dodgerblue;}
+    }
+    /*About Me*/
+    .grid-view {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-column-gap: 40px;
+        padding: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        cursor: pointer;
+        margin-top: 40px;
+    }
+    .grid-view > div {
+        padding: 20px;
+    }
+    .img {
+        width: 100%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .button {
+        background-color: rgb(219, 36, 76);
+        padding: 10px;
+        border: 1px solid rgb(219, 36, 76);
+        outline: none;
+        cursor: pointer;
+        border-radius: 6px;
+        transition: all .5s;
+        margin-right: 10px;
+        font-family: Pompiere;
+        font-size: 14px;
+    }
+    .button a {
+        text-decoration: none;
+        color: white;
+    }
+    .button:hover {
+        background-color: rgba(153, 5, 37, 0.932);
+    }
+    .toptext {
+        font-size: 40px;
+        font-family: Pompiere;
+        text-align:center;
+        padding-bottom: 30px;
+        margin-top: 0;
+    }
+    @media screen and (max-width: 900px) {
+        .grid-view {
+            grid-template-columns: 100%;
+            width: 100%;
+            padding: 10px;
+        }
+    }
+    /*Join us*/
+    .row::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    .imagecol {
+        float: left;
+        width: 56%;
+        padding: none;
+    }
+    .textcol {
+        float: left;
+        width: 44%;
+        padding: 10px 30px;
+    }
+    .container {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40px;
+        cursor: pointer;
+    }
+    @media screen and (max-width: 900px) {
+        .imagecol, .textcol {
+            float: none;
+            width: 100%;
+        }
+        .container {
+            width: 90%;
+        }
+    }
+    /*The footer*/
+    footer {
+        background-color: rgb(53, 50, 50);
+        margin-top: 100px;
+    }
+    .footer-grid-container {
+        display: grid;
+        grid-template-columns: 40% 35% 25%;
+        grid-column-gap: 30px;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 100px 15px 50px 15px;
+    }
+    .footer-grid-container > div.footer-text:not(.grid-image) {
+        color: white;
+        padding-top: 0;
+    }
+    .grid-image {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 15px;
+    }
+    div.footer-text h3 {
+        margin-top: 0;
+        padding-top: 0;
+        margin-bottom: 40px;
+        font-family: Pompiere;
+        font-size: 30px;
+    }
+    div.footer-text li {
+        padding: 7px 0;
+        margin: 0;
+        cursor: pointer;
+    }
+    div.footer-text li a {
+        text-decoration: none;
+        color: white;
+        transition: .6s;
+    }
+    div.footer-text li a:hover {
+        color: #bbb;
+    }
+    @media screen and (max-width: 900px) {
+        .footer-grid-container {
+            grid-template-columns: 100%;
+        }
+        div.footer-text {
+            margin-top: 40px;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        .grid-image {
+            grid-template-columns: auto auto;
+        }
+    }
+    .copyright {
+        display: block;
+        margin: 5px auto;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="head">
+        <h2>Welcome to my Travel Blog</h2>
+        <p class="text" style="font-family: Redressed; font-size:20px;">
+            A Blog carefully crafted for travelers and adventurers. Pack your bags,
+             hit the road and scroll down to see all of your amazing stories!
+        </p>
+        <a href="adventourswithaishablog.html">See My Blog</a>
+        </div>
+    </header>
+    <div class="grid-view">
+        <div>
+            <img class="img" src="images/aishab.jpeg" alt="I'm Aisha" style="width:100%"/>
+        </div>
+        <div>
+            <h2 class="toptext">ABOUT ME</h2>
+            <p class="text">I’m Aisha and I’m a Nigerian. As an undergraduate currently in my penultimate year,
+                I can say that I’ve seen quite a number of places here in Nigeria
+                 and made my fair share of trips.</p>
+            <p class="text"> Luckily, I’m an extrovert who loves to explore
+                 places and meet new people. To do something more permanent I decided to carry y’all along by
+                 starting this blog and make you see beautiful places people hardly hear or talk about.
+            </p>
+            <div style="margin-top: 50px;">
+            <button type="button" class="button"><a href="adventourswithaishaabout.html">CONTINUE READING</a></button>
+            <button type="button" class="button"><a href="adventourswithaishablog.html">READ MY BLOG</a></button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="imagecol">
+                <img class="img" src="images/join-us.jpg" alt="man on mountain" style="width: 100%"/>
+            </div>
+            <div class="textcol">
+                <h2 class="toptext">Join And Trip With Us</h2>
+                <p class="text">We will be touring different tourists sites here in Nigeria.
+                    There are a lot of beautiful places here in Nigeria with little
+                    people to showcase it to the world.
+                </p>
+                <button type="button" class="button"><a href="#">GET IN TOUCH</a></button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-grid-container">
+            <div class="grid-image">
+                <img class="img" src="images/background-image-aisha.jpg" style="height:150px"/>
+                <img class="img" src="images/awhum2.jpg" style="height:150px"/>
+                <img class="img" src="images/erin-ijesha.jpg" style="height:150px"/>
+                <img class="img" src="images/yankari-slide1.jpg" style="height:150px"/>
+                <img class="img" src="images/kajuru-castle.jpg" style="height:150px"/>
+                <img class="img" src="images/yankari4.jpg" style="height:150px"/>
+            </div>
+            <div class="footer-text">
+                <h3>Get In Touch</h3>
+                <ul>
+                    <li>adventourswithaisha@gmail.com</li>
+                    <li>(234) 9038615721</li>
+                </ul>
+            </div>
+            <div class="footer-text">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="adventourswithaishablog.html">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="adventourswithaishaabout.html">About Me</a></li>
+                </ul>
+            </div>
+        </div>
+        <p align="center" style="color: white; margin-bottom: 10px;">&copy; Oduola Idris</p>
+    </footer>
+</body>
+</html>

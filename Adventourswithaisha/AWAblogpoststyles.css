@@ -1,0 +1,258 @@
+html {
+    background-image: linear-gradient(to bottom right, rgba(230, 235, 240, 0.856), white);
+}
+* {
+    box-sizing: border-box;
+}
+.heading-text {
+    font-family: Pompiere;
+    border-top: 3px double #999;
+    border-bottom: 3px double #999;
+    font-weight: bold;
+    padding: 7px;
+}
+.head {
+    text-align: center;
+}
+.head a {
+    text-decoration: none;
+    color: #333;
+}
+.head a:hover {
+    transition: .3s;
+    color: dodgerblue;
+}
+.head a:active {
+    color: pink;
+}
+.headtext {
+    font-size: 40px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    border: none;
+}
+/*The Navigation Links*/
+.nav {
+    position: sticky;
+    top: 0;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    align-content: center;
+    justify-content: center;
+    background: rgb(110, 193, 248);
+    grid-column-gap: 10px;
+}
+.nav .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: rgba(245, 245, 245, 0.822);
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.nav a {
+    display: inline;
+    text-decoration: none;
+    color: #333;
+    padding: 1px 20px;
+    text-align: center;
+    transition: .7s;
+    font-weight: bold;
+    font-size: 20px;
+}
+.nav a:hover:not(#about),.nav a:hover:not(#blog) {
+    color: rgba(212, 208, 208, 0.979);
+}
+.nav a#about,.nav a#blog {
+    color: dodgerblue;
+}
+/*Second Navigation*/
+.drop {
+    display: none;
+    background-color: dodgerblue;
+    padding: 5px auto;
+    position: relative;
+    width: 100%;
+    font-family: Pompiere;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+p.droptext {
+    color: white;
+    text-align: center;
+}
+div.nav-content {
+    display: none;
+    background-color: dodgerblue;
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+    width: 100%;
+}
+div.nav-content a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+div.nav-content a#about-me {
+    background-color: dodgerblue;
+}
+div.nav-content a:hover:not(#about-me) {
+    color: #aaa;
+    transition: .5s;
+}
+.nav:hover div.nav-content {
+    display: block;
+    animation-name: dropdown;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}
+@keyframes dropdown {
+    from {top: -500px; z-index: 0;}
+    to {top: 0; z-index: 1;}
+}
+/*The media query for the navigations*/
+@media screen and (max-width: 700px) {
+    .nav {
+        display: none;
+    }
+    .drop {
+        display: inline-block;
+    }
+}
+body {
+    padding: 0;
+    line-height: 40px;
+    margin: 0;
+    font-family: Pompiere;
+}
+.text {
+    font-size: 25px;
+}
+
+.content, .headtext {
+    width: 65%;
+    margin: 10px auto 30px auto;
+}
+/*The top image*/
+p.caption {
+   text-align: center;
+   margin: 0;
+   font-size: 16px;
+   padding-bottom: 5px;
+}
+div.image {
+   width: 45%;
+   margin: 40px auto;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+@media screen and (max-width: 900px) {
+div.image {
+    width: 100%;
+   }
+}
+/*The footer*/
+.img {
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+footer {
+    background-color: rgb(53, 50, 50);
+    margin-top: 100px;
+}
+.footer-grid-container {
+    display: grid;
+    grid-template-columns: 40% 35% 25%;
+    grid-column-gap: 30px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 100px 15px 50px 15px;
+}
+.footer-grid-container > div.footer-text:not(.grid-image) {
+    color: white;
+    padding-top: 0;
+}
+.grid-image {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 15px;
+}
+div.footer-text h3 {
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 40px;
+    font-family: Pompiere;
+    font-size: 30px;
+}
+div.footer-text li {
+    padding: 7px 0;
+    margin: 0;
+    cursor: pointer;
+}
+div.footer-text li a {
+    text-decoration: none;
+    color: white;
+    transition: .6s;
+}
+div.footer-text li a:hover {
+    color: #bbb;
+}
+@media screen and (max-width: 900px) {
+   .footer-grid-container {
+        grid-template-columns: 100%;
+    }
+    div.footer-text {
+        margin-top: 40px;
+        }
+    }
+@media screen and (max-width: 600px) {
+    .grid-image {
+        grid-template-columns: auto auto;
+    }
+}
+/*Blog post Image*/
+.post-image {
+    display: block;
+    width: 40%;
+    margin: 40px auto;
+    cursor: pointer;
+}
+@media screen and (max-width:900px) {
+    .post-image, .content {
+        width: 90%;
+    }
+}
+/*Post Author*/
+.author {
+    width: 30%;
+    margin: 0 auto;
+}
+.author a:hover {
+    transition: .3s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    opacity: 0.8;
+}
+.author-image {
+    border-radius: 50%;
+    width: 20%;
+    display: block;
+    margin: 30px auto;
+}
+.author-text {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0;
+}
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7), 
+    rgba(0, 0, 0, 0));
+    margin-bottom: -10px;
+}
